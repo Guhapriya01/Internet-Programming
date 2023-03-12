@@ -6,13 +6,13 @@
         function validate_form() {
             if (document.contact_form.user.value == "" || document.contact_form.mail.value == "" || document.contact_form.passwd.value == "") {
                 alert("Please fill all the details box !!");
-                console.log("ppp");
+                // console.log("ppp");
                 window.location.href = "/home/elcot/Internet Programming/Form/signup.html"; 
     
             }
             else{
                 alert("Successfully submitted your details !!");
-                console.log("uu");
+                // console.log("uu");
                  window.location.href = "/home/elcot/Internet Programming/User/Uhome.html"; 
                 
             }
@@ -42,10 +42,13 @@
         .submit{
             background-color: blueviolet;
         }
+        .but{
+            size: 122px;
+        }
 
     </style>
    
-    <title>SignUp</title>
+    <title>Register</title>
 </head>
 <body>
     <div class="header" style="background-color: #002F4C; color: white">
@@ -57,7 +60,7 @@
     <div class="tab">
     <form name="contact_form">
         <table>
-            <caption style="padding: 2%;">SIGN UP </caption>
+            <caption style="padding: 2%;">Registration </caption>
             
             <tr>
                 <td>
@@ -93,8 +96,8 @@
             </tr>
         <tr align="center">
             <td colspan="2">
-                <button type="button" value="submit" onclick="validate_form()"
-                    style="padding: 5%;border-radius: 70%;background-color: green;color: white;">
+            <button type="button" value="submit" onclick="validate_form()"
+                style="padding: 5%;border-radius: 70%;background-color: green;color: white;">
             </td>
         </tr>
         </table>
