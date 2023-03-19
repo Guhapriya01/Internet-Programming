@@ -4,12 +4,67 @@
     <script>
 
         function validate_form() {
-            if (document.contact_form.user.value == "" || document.contact_form.mail.value == "" || document.contact_form.passwd.value == "") {
+
+            var mail = document.contact_form.mail.value;
+            at = mail.indexOf("@");
+            dot = mail.lastIndexOf(".");
+
+            let hasCaps = false;
+            let hasSpecial = false;
+            let hasSmall = false;
+            let hasNum = false;
+
+            var pwd = document.contact_form.passwd.value;
+
+            // password validate
+
+            for (let i = 0; i < pwd.length; i++) {
+                c = pwd[i];
+                console.log(c>=65 && c<=90 );
+                console.log(c);
+                if(c>='A' && c<='Z'){
+                    hasCaps = true;
+                }
+                else if(c>='a' && c<='z'){
+                    hasSmall=true;
+                }
+
+                else if(c>='0' && c<='9'){
+                    hasNum=true;
+                }
+                else{
+                    hasSpecial = true;
+                }                
+            }
+            // console.log(hasSpecial+ " "+hasCaps+" "+hasSmall+" "+hasNum);
+
+
+            if (document.contact_form.user.value == "" || mail == "" || pwd == "") {
                 alert("Please fill all the details box !!");
                 // console.log("ppp");
-                window.location.href = "/home/elcot/Internet Programming/Form/signup.html"; 
-    
+                window.location.href = "/home/elcot/Internet Programming/Form/signup.html";
+
             }
+            
+            else if (at < 1 || (dot - at < 2) || dot>=mail.length-4) {
+                // console.log(mail.length +" "+dot);
+                alert("Please enter correct email ID");
+                window.location.href = "C:/Users/Administrator/Desktop/New%20folder/Form/signup.html";
+            }    
+            
+
+            else if(!(hasCaps && hasNum && hasSmall && hasSpecial && pwd.length>=6)){
+                alert("Password must contain atleast 6 chracters, One UpperCase letter, Lowercase letter and a Special symbol !!");
+                 window.location.href = "/home/elcot/Internet Programming/Form/signup.html"; 
+            }
+
+            if (document.contact_form.cpasswd.value != document.contact_form.passwd.value) {
+
+                alert("Password doesn't match !!");
+                window.location.href = "C:/Users/Administrator/Desktop/New%20folder/Form/signup.html";
+            }    
+
+
             else{
                 alert("Successfully submitted your details !!");
                 // console.log("uu");
@@ -59,8 +114,10 @@
 
     <div class="tab">
     <form name="contact_form">
-        <table>
-            <caption style="padding: 2%;">Registration </caption>
+        <table   style=" padding: 5%;"
+>
+            <caption style="padding: 3%;/* size: 48px; */font-size: x-large;font-family: serif;font-style: italic;">Sign Up Or Register </caption>
+           
             
             <tr>
                 <td>
@@ -85,6 +142,21 @@
                 <td>
                     <input type="password" name="passwd" id="passwd">
                 </td>
+            </tr>
+            <tr>
+            
+                <td>
+            
+                    <label for="cpasswd">Confirm Password</label>
+            
+                </td>
+            
+                <td>
+            
+                    <input type="password" name="cpasswd" id="cpasswd">
+            
+                </td>
+            
             </tr>
             <tr>
                 <td>
