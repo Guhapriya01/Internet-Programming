@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        th,
+        td {
+            width: 150px;
+            text-align: center;
+            padding: 5px
+        }
+
+        .tab {
+            top: 20%;
+
+            position: absolute;
+            left: 30%;
+            padding: 7%;
+            border-radius: 16%;
+            font-family: 'Times New Roman', Times, serif;
+            background-image: url("https://wallpapercave.com/wp/wp6259031.jpg");
+            color: white;
+            font-size: larger;
+        }
+
+        .submit {
+            background-color: blueviolet;
+        }
+    </style>
+
+    <title>SignUp</title>
+</head>
+
+<body>
+    <div class="header" style="background-color: #002F4C; color: white">
+        <br>
+        <h1 style="text-align: center;">ARCHAEOLOGICAL SITES</h1>
+        <hr>
+    </div>
+
+    <div class="tab">
+        <form name="contact_form" action="MyServlet" method="post">
+            <table style="
+    padding: 3%;">
+                <caption style="padding: 3%;/* size: 48px; */font-size: x-large;font-family: serif;font-style: italic;">Login to explore more</caption>
+
+                <tr>
+                    <td>
+                        <label for="user">User name</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter user name" name="user" id="user">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="mail">Mail</label>
+                    </td>
+                    <td>
+                        <input type="email" placeholder="Enter mail id" name="mail" id="mail">
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                    <td>
+                        <label for="passwd">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" placeholder="Enter password" name="passwd" id="passwd">
+                    </td>
+                </tr>
+                
+                 <tr>
+                    <td>
+                        <label for="mobile">Phone number</label>
+                    </td>
+                    <td>
+                        <input type="text" placeholder="Enter Phone number" name="mobile" id="mobile">
+                    </td>
+                </tr>
+               
+                <tr align="center">
+                    <td colspan="2">
+                        <button type="submit" value="submit"
+                            style="padding: 5%;border-radius: 70%;background-color: green;color: white;"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>

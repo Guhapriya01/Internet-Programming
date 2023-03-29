@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author 20cse006
+ */
+public class MyServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+       
+    }
+
+   
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<HTML>");
+        out.println(" <HEAD><TITLE>A Servlet</TITLE></HEAD>");
+        out.println(" <BODY>");
+        // Getting HTML parameters from Servlet
+        String username = request.getParameter("user");
+        String password = request.getParameter("passwd");
+        String mail = request.getParameter("mail");
+        String mobile = request.getParameter("mobile");
+        out.println("<div class=\"header\" style=\"background-color: #002F4C; color: white\">\n" +
+"        <br>\n" +
+"        <h1 style=\"text-align: center;\">ARCHAEOLOGICAL SITES</h1>\n" +
+"        <hr>\n" +
+"    </div>");
+        out.println("<h3>Welcome "+username+"</h3>");
+        out.println("<h3>Your mail id is  "+mail+"</h3>");
+        out.println("<h3>Mobile number is "+mobile+"</h3>");
+        out.println(" </BODY>");
+        out.println("</HTML>");
+        out.close();
+       
+    }
+
+   
+}
